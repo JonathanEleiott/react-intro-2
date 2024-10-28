@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>React Counter</title>
+    <!-- React CDNs -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+     <!-- BABEL -->
+     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const App = () => {
+        // const [name, setName] = React.useState('Fish');
+        // const [allPokemon, setAllPokemon] = React.useState([]);
+        const [counter, setCounter] = React.useState(100);
+        //          setCounter sets the counter to a new value that is passed in
+        //          re-renders the page
+
+        // const counter = 100;
+        // const setCounter = () => {}
+
+        const increaseCount = () => {
+          setCounter(counter + 1);
+        }
+
+        return (
+          <>
+            <h1>Current Count: {counter}</h1>
+            <button onClick={increaseCount} >Click Here!</button>
+          </>
+        )
+      }
+
+      const container = document.querySelector(`#root`);
+      const root = ReactDOM.createRoot(container);
+      root.render(<App />);
+    </script>
+
+
+
+
+    <script>
+      const names = [`Sally`, 'Sandy', `Joel`];
+      // const favStudent = names[0];
+      // const bestStudent = names[1];
+      // const awesomeStudent = names[2];
+
+      const nums = [16, 12, 23, 47];
+
+      const [favStudent, bestStudent, awesomeStudent, worstStudent] = names;
+
+      console.log(worstStudent);
+
+    </script>
+  </body>
+</html>
